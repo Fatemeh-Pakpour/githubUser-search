@@ -1,6 +1,6 @@
 import React ,{Component} from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSearchengin} from '@fortawesome/free-solid-svg-icons';
+import {faSearch} from '@fortawesome/free-solid-svg-icons';
 
 class SearchForm extends Component {
     state = {
@@ -24,16 +24,17 @@ class SearchForm extends Component {
     render(){
         console.log(this.state.textSearch);
         return(
-            <form>
+            <form onSubmit = {this.handleSubmit}>
                 <input
                     type ="search"
                     placeholder ="Enter the github account"
                     name ="search"
                     ref ={(input)=>this.query = input}
+                    onChange = {this.onSearchChange}
                 />
                 <button
                     type="submit"
-                ><FontAwesomeIcon icon= {faSearchengin} /></button>
+                ><FontAwesomeIcon icon= {faSearch} /></button>
             </form>
         )
     }

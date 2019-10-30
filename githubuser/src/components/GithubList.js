@@ -1,12 +1,22 @@
-import React , {Component} from 'react';
+import React from 'react';
 
-class GithubList extends Component {
-    render(){
+    const GithubList = props => {
+        // const results = props.data;
+        // console.log(results);
+        // let githubUsers;
+        // if (results.length > 0){
+        //     githubUsers = results.map(github => 
+        //       <Gif login={github.login} 
+        //           key ={github.id}
+        //       />
+        //   )
+        // } else { githubUsers = <NoGif/>}
+        
         return (
-            <ul></ul>
+            <ul>{props.login}</ul>
         )
     }
 
-}
+
 
 export default GithubList;

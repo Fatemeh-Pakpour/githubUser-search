@@ -1,6 +1,7 @@
 import React , {Component} from 'react';
 import axios from 'axios';
 import SearchForm from './SearchForm';
+import GithubList from './GithubList';
 
 class App extends Component {
   state = {
@@ -27,6 +28,13 @@ componentDidMount(){
     return (
       <div>  
         <SearchForm onSearch = {this.performSearch}/> 
+        {this.state.githubUser.map(github => (
+          <GithubList 
+            login = {github.login} 
+            id = {github.id}
+            key = {github.id}
+          />
+        ))}     
       </div>
     )
   }
