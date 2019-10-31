@@ -1,4 +1,7 @@
 import React from "react";
+// import {Consumer} from './Context';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import {Container} from 'react-bootstrap';
 import Github from "./Github";
 import NoUser from "./NoUser";
 
@@ -19,7 +22,7 @@ const GithubList = props => {
     usersList = <NoUser />;
   }
 
-  return <ul>{usersList}</ul>;
+  return (<Container className = "users-list">{usersList}</Container>);
 };
 
 export default GithubList;
