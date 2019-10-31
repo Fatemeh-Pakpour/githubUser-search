@@ -4,5 +4,5 @@ import GithubList from '../GithubList';
 // this is setup our provider and consumer
 const GithubContext = React.createContext();
 
-const Provider = GithubContext.Provider;
-const Consumer = GithubContext.Consumer;
+export const Provider = GithubContext.Provider;
+export const Consumer = GithubContext.Consumer;

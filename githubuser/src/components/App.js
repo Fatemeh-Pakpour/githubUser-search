@@ -1,7 +1,9 @@
 import React , {Component} from 'react';
 import axios from 'axios';
+// import {Provider} from './Context';
 import SearchForm from './SearchForm';
 import GithubList from './GithubList';
+// import GithubList from './GithubList';
 
 class App extends Component {
   state = {
@@ -23,19 +25,25 @@ class App extends Component {
 componentDidMount(){
   this.performSearch();
 }
+handelSearch = ()=> {
+    this.setState(
+      prevState => ({
+        githubUs: prevState.githubUser.map(github=> github.login)
+      })
+    )
+}
   render(){
     console.log(this.state.githubUser);
     return (
-      <div>  
-        <SearchForm onSearch = {this.performSearch}/> 
-        {this.state.githubUser.map(github => (
+      // <Provider >
+        <div>  
+          <SearchForm onSearch = {this.performSearch}/> 
           <GithubList 
-            login = {github.login} 
-            id = {github.id}
-            key = {github.id}
+              data = {this.state.githubUser}
+          // searchLogin = {this.state.handelSearch}
           />
-        ))}     
-      </div>
+        </div>
+      // </Provider>
     )
   }
   
