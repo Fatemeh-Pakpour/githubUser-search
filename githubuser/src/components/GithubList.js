@@ -8,7 +8,7 @@ import NoUser from "./NoUser";
 const GithubList = () => {
   return (
     <Consumer>
-      {({data}) => {
+      {({ data }) => {
         console.log(data);
         let usersList;
         if (data.length > 0) {
@@ -21,7 +21,7 @@ const GithubList = () => {
             />
           ));
         } else {
-          usersList = <NoUser/>;
+          usersList = <NoUser />;
         }
         return <Container className="users-list">{usersList}</Container>;
       }}

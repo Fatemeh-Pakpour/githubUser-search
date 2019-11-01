@@ -12,8 +12,8 @@ class App extends Component {
       <Container>
         <SearchForm />
         <Loading>
-          <GithubList/>
-          </Loading>  
+          <GithubList />
+        </Loading>
       </Container>
     );
   }
