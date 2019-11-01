@@ -1,8 +1,12 @@
-const ROOT_URL = "https://api.github.com/search/users?q=";
+const githubApi = "https://api.github.com/search/users?q=$";
 
-async function getGithubUser(query){
-    const response = await fetch(`${ROOT_URL}${query}`);
-    return response.json();
-}
+const loadUsers = async (query )=> {
+     const response = await fetch(`${githubApi}${query}`)
+     if (response.status === 200) {
+        return await response.json();
+      } else {
+        return response.statusText;
+      }
+    }
 
-export {getGithubUser}
+export {loadUsers}
