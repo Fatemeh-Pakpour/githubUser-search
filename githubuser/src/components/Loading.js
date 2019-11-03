@@ -5,7 +5,7 @@ const Loading = props => {
   return (
     <Consumer>
       {({ loading }) => {
-        if (loading === true) {
+        if (loading) {
           return <h1>Loading ...</h1>;
         } else {
           return props.children;
