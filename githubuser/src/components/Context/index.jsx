@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-// import * as API from '../../api'
 import axios from "axios";
 
 // this is setup our provider and consumer
@@ -23,12 +22,7 @@ export class Provider extends Component {
         console.log("Error fetching and parsing data", error);
       });
   };
-  // performSearch = async(query = "John") =>{
-  //   const res = await API.loadUsers(query)
-  //   const users = res.items || [];
-  //   this.setState({githubUser : users , loading:false})
-  // }
-
+  
   componentDidMount() {
     this.performSearch();
   }

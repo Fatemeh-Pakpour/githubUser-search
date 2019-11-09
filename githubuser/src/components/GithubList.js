@@ -21,7 +21,7 @@ const GithubList = () => {
             />
           ));
         } else {
-          usersList = <NoUser />;
+          usersList = <NoUser/>;
         }
         return <Container className="users-list">{usersList}</Container>;
       }}
